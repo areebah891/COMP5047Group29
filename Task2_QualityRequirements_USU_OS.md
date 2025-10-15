@@ -62,7 +62,7 @@ approval of union membership means:
 
 # Scenario 1: Login and Authentication/ Privilege Access 
 
-| Quality Attribute | Requirement Statement (Testable) | Metric | Unit | Precision | Target Value | How to Measure / Test |
+| Quality Attribute | Requirement Statement | Metric | Unit | Precision | Target Value | How to Measure / Test |
 |------------------|---------------------------------|--------|------|-----------|--------------|---------------------|
 | Security | All USU officers must login with unique username/password (min 12 chars) + MFA, invalid attempts denied, account locks after 3 failed attempts for 20 mins. | Unauthorised access attempts | Attempts | 1 | 0 successful | Attempt login with invalid credentials, verify lockout occurs, check audit log |
 | Performance | Login response time must be fast to avoid delays. | Response time | Seconds | 0.1 | ≤ 2 | Automated timing of login requests under normal and peak times |
@@ -75,7 +75,7 @@ This scenario ensures that only authorised USU officers access FR-USU-1 function
 
 # Scenario 2: Approval of Membership (FR-USU-1a)
 
-| Quality Attribute | Requirement Statement (Testable) | Metric | Unit | Precision | Target Value | How Measured / Tested |
+| Quality Attribute | Requirement Statement | Metric | Unit | Precision | Target Value | How Measured / Tested |
 |------------------|---------------------------------|--------|------|-----------|--------------|---------------------|
 | Security | Only authenticated USU officers can approve membership; logs maintained. | Unauthorised access attempts | Attempts | 1 | 0 | Attempt approval with non-officer account, check logs for completeness |
 | Performance | Approval processing time must be fast. | Approval processing time | Seconds | 0.1 | ≤ 5 | Measure time from submission to system confirmation |
@@ -87,7 +87,7 @@ The approval process ensures that only verified unions participate in USU activi
 
 # Scenario 3: Approval of Updates to USU Registration Data (FR-USU-1b)
 
-| Quality Attribute | Requirement Statement (Testable) | Metric | Unit | Precision | Target Value | How Measured / Tested |
+| Quality Attribute | Requirement Statement | Metric | Unit | Precision | Target Value | How Measured / Tested |
 |------------------|---------------------------------|--------|------|-----------|--------------|---------------------|
 | Security | Only USU officers can approve updates, all updates logged. | Unauthorised updates | Count | 1 | 0 | Attempt update with non-officer account, verify logs capture all actions |
 | Performance | Update approval must propagate changes quickly. | Update propagation time | Seconds | 0.1 | ≤ 5 | Measure time from approval to data visible in system |
@@ -99,7 +99,7 @@ Scenario 3 ensures that union registration data remains accurate, secure, and up
 
 # Scenario 4: Approval of Termination of Membership (FR-USU-1c)
 
-| Quality Attribute | Requirement Statement (Testable) | Metric | Unit | Precision | Target Value | How Measured / Tested |
+| Quality Attribute | Requirement Statement | Metric | Unit | Precision | Target Value | How Measured / Tested |
 |------------------|---------------------------------|--------|------|-----------|--------------|---------------------|
 | Security | Only USU officers can approve terminations, accounts locked, logs maintained. | Unauthorised terminations | Count | 1 | 0 | Attempt termination with non-officer account, check audit logs |
 | Performance | Termination requests processed promptly. | Termination processing time | Seconds | 0.1 | ≤ 10 | Measure time from request approval to account deactivation |
